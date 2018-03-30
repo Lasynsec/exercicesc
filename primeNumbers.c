@@ -3,8 +3,9 @@
 
 int main(){
     int userAnswer;
-    int result;
+    int resultOdd;
     int i;
+
 
     do{ 
         printf("Type a number greater than 1 : ");
@@ -14,17 +15,22 @@ int main(){
             printf("Sorry but the number you've typed is not greater than 1 !\n");
         }
     }while(userAnswer <= 1);
-    
-    for(i = 1;i <= userAnswer; i+=2){
-        if(i > 1){
-            result = (int) sqrt(userAnswer) % i;
-           // if( (sqrt(userAnswer) % i == 0){
-           //     printf("Sorry but %d is not a prime number",userAnswer);
-           // }
-           //
-           printf("modulo result %d\n",result);
+   
+    if(userAnswer % 2 == 0 && userAnswer != 2){
+        printf("%d is not prime number \n",userAnswer);
+    } else if(userAnswer == 2){ 
+        printf("%d is a prime number \n",userAnswer);
+    }else {
+        for(i = 1;i < userAnswer; i+=2){
+            if(i > 1){
+                 resultOdd = (int) sqrt(userAnswer) % i;
+                if(resultOdd == 0){ // If the number is even.  
+                    printf("%d is not prime number, it can be divided by %d \n",userAnswer,i);
+                 }else{
+                    printf("%d is a prime number \n",userAnswer);
+                }
+            }
         }
     }
     return 0;
 }
-    
