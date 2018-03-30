@@ -21,7 +21,7 @@ int main(){
     } else if(userAnswer == 2){ 
         printf("%d is a prime number \n",userAnswer);
     }else {
-        for(i = 1;i < userAnswer; i+=2){
+        for(i = 1;i <= userAnswer; i+=2){
             if(i > 1){
                  resultOdd = (int) sqrt(userAnswer) % i;
                 if(resultOdd == 0){ // If the number is even.  
